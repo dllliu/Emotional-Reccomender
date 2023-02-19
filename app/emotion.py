@@ -98,25 +98,3 @@ Example("I'm confident that you'll come through for me", "Trust"),
 Example("I trust that you will follow through on your promises", "Trust"),
 Example("You've shown that you're trustworthy and I appreciate that", "Trust")
 ]
-
-
-"""
-response = co.classify(
-  model='large',
-  inputs=inputs,
-  examples=examples,
-)
-"""
-
-"""
-val = input("How are you feeling today: ")
-arr = []
-arr.append(val)
-response = co.classify(
-  model='large',
-  inputs=arr,
-  examples=examples,
-)
-print('The confidence levels of the labels are: {}'.format(
-response.classifications))
-"""
