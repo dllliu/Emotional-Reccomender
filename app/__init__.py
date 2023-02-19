@@ -88,20 +88,10 @@ def get_emotion():
     x = response.find("\"")
     y = response.find(",")
     z = response[x:y]
-    model_engine = "text-davinci-002"
-    temperature = 0.8
-    max_tokens = 40
     # send API request to OpenAI and receive response
-    response = openai.Completion.create(
-    engine=model_engine,
-    prompt=f"Do not give extra output. Give me detailed advice for what to do when I am feeling {z} because {emot}",
-    temperature=temperature,
-    max_tokens=max_tokens
-    )
-    generated_text = response.choices[0].text.strip()
     now = datetime.today().isoformat()
     db.add_entry(now, emot, session['username'])
-    return render_template("direct.html",response = z,res=generated_text)
+    return render_template("direct.html",response = z)
 
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
