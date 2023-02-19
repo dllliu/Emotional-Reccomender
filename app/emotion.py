@@ -108,6 +108,7 @@ response = co.classify(
 )
 """
 
+"""
 val = input("How are you feeling today: ")
 arr = []
 arr.append(val)
@@ -118,3 +119,4 @@ response = co.classify(
 )
 print('The confidence levels of the labels are: {}'.format(
 response.classifications))
+"""
